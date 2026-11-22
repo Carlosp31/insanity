@@ -152,7 +152,9 @@ constraint e1[2] = e2[2] /\ e2[2] = e3[2] /\ e3[2] = e4[2];   % right
 constraint e1[3] = e2[3] /\ e2[3] = e3[3] /\ e3[3] = e4[3];   % back
 constraint e1[4] = e2[4] /\ e2[4] = e3[4] /\ e3[4] = e4[4];   % left
 
-
+constraint cube1 != cube2 /\ cube1 != cube3 /\ cube1 != cube4 /\
+           cube2 != cube3 /\ cube2 != cube4 /\ cube3 != cube4;
+           
 % With Gecode 6.4.0 this takes 20 minutes. With Chuffed 0.14.9 its instantly
 solve satisfy; 
 
@@ -182,6 +184,11 @@ output ["Cubes (top, front, right, down, back, left) with Red = 1, Blue = 2, Gre
         row("Cube 3  ", fix(s3), fix(state3)),
         row("Cube 4  ", fix(s4), fix(state4)),
         "\nSecond problem (one color on each side):\n",
+        "        Front  Right  Back   Left\n",
+        row("Cube 1  ", fix(e1), fix(stateEq1)),
+        row("Cube 2  ", fix(e2), fix(stateEq2)),
+        row("Cube 3  ", fix(e3), fix(stateEq3)),
+        row("Cube 4  ", fix(e4), fix(stateEq4))];
         "        Front  Right  Back   Left\n",
         row("Cube 1  ", fix(e1), fix(stateEq1)),
         row("Cube 2  ", fix(e2), fix(stateEq2)),
