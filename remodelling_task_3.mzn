@@ -151,11 +151,11 @@ constraint cube1 != cube2 /\ cube1 != cube3 /\ cube1 != cube4 /\
 % With Gecode 6.4.0 this takes 20 minutes. With Chuffed 0.14.9 its instantly
 solve satisfy; 
       
-% Number of variables (Original) = 92
-% Number of variables (Remodelled) = 52
+% Number of variables (Original) = 88
+% Number of variables (Remodelled) = 88
 
-% Number of constraints (Original) = 72
-% Number of constraints (Remodelled) = 36
+% Number of constraints (Original) = 98
+% Number of constraints (Remodelled) = 78
 
 % Runtime (original) = Normally around 6 ms.
 % Runtime (Remodelled) = Normally around 2 ms.
